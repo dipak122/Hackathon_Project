@@ -19,6 +19,13 @@ from . import views
 
 
 urlpatterns = [
-
-    path('list',views.list,name='list'),
+    path('',views.index,name='index'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login, name='login'),
+    path('register_submission/', views.register_submission, name='register_submission'),
+    path('verify_login/', views.verify_login, name='verify_login'),
+    path('sidelist/',views.sidelist,name='sidelist'),
+    path('itemlist/',views.itemlist,name='itemlist'),
+    path('about/',views.about,name='about'),
+    path('addbook/',views.addbook,name='addbook'),
 ]

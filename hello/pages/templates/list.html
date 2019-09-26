@@ -13,15 +13,9 @@
   <body>
   <div class="container my-3">
     <h1>Hello, world!</h1>
-    <div>
-    <form method="POST" action="{% url 'list' %}">{% csrf_token %}
-        <input type="text" name="txt">
-        <button type="submit" name ="submit" class="btn btn-danger">submit</button>
-    </form>
-    </div>
-  </div>
 
 
+<!--
   <div>
     {% if messages %}
     <ul class="message">
@@ -32,7 +26,7 @@
     {% endif %}
 
   </div>
-
+-->
 <!--
     {% if sr %}
     {% for i in sr%}
@@ -52,7 +46,7 @@
     {% endfor %}
 {% endif %}
 -->
-
+<!--
 
   <div class="container">
     {% if sr %}
@@ -61,7 +55,8 @@
     <div class="media">
     {% if i.image %}
   <img src="{{i.image.url}}"  width="130" height="130" class="align-self-center mr-3" alt="...">
-    {% endif %}
+      {% endif %}
+
 
     <table border="0px" width="300px">
       <tr>
@@ -82,7 +77,7 @@
 
   </div>
 
-
+-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

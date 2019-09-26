@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-white w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="{% url 'itemlist' %}" target="iframe" class="w3-bar-item w3-button">Link 1</a>
+  <a href="{% url 'index' %}" target="iframe" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:25%">
+
+<div class="w3-container w3-teal">
+    {% if m %}
+<iframe name="iframe" width="900" src="{% url m %}" height="550" frameborder="0" style="border:0;" allowfullscreen="">
+    {% endif %}
+    <iframe name="iframe" width="900"  height="550" frameborder="0" style="border:0;" allowfullscreen="">
+    </iframe>
+</iframe>
+</div>
+</div>
+
+
+</body>
+</html>

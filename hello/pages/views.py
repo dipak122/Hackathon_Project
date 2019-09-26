@@ -1,25 +1,90 @@
 from django.shortcuts import render
-from . models import listdb
+from . models import registeringo
+#from . models import listdb
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 
-def list(request):
-    print("hello")
+def index(request):
+    return render(request,'index.html')
 
-    if request.method=='POST':
-        sr= request.POST['txt']
-        print(sr)
 
-        if sr:
-            match = listdb.objects.filter(Q(name__icontains=sr)| Q(city__icontains=sr))
-            if match:
-                return render(request,'list.html',{'sr':match})
+def sidelist(request):
+    if request.method == 'POST':
+        m=request.POST.get('itemlist')
+        print(m)
+        m=m[:9]
+        return render(request,'sidelist.html',{'m':m})
+
+    return render(request,'sidelist.html')
+
+def itemlist(request):
+    return render(request,'itemlist.html')
+
+def about(request):
+    return render(request,'about.html')
+
+def addbook(request):
+    if request.method == 'POST':
+        pass
+
+
+    return render(request,'addbook.html')
+
+
+
+
+def login(request):
+    return render(request,'login.html')
+
+def verify_login(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+
+    param = registeringo.objects.all()
+
+    for i in param:
+        if username == i.username:
+            if password == i.password:
+                return render(request,'index.html',{'username':username})
+                #par=''
+                #return list_notice(request,par)
             else:
-                messages.error(request,'no result found')
+                print("password is incorrect ")
+                return render(request,'login.html')
         else:
-            return HttpResponseRedirect('/list/')
+            print("user not exit")
+            return render(request,'login.html')
 
-    return render(request,'list.html')
 
+
+    return render(request,'index.html')
+
+
+
+
+def register(request):
+    return render(request,"register.html", {})
+
+def register_submission(request):
+    if request.method == "POST":
+        m=registeringo.objects.all()
+        k=[]
+        for i in m:
+            k.append(i.username)
+
+        username=request.POST["Username"]
+        password=request.POST["Password"]
+        f=1
+        if username in k :
+            print("Username already exit")
+            m = 'user already exist'
+            return render(request, "register.html", {'m': m})
+        else:
+
+            Registerinfo = registeringo(username=username,password=password)
+            m='successfully registered'
+            Registerinfo.save()
+        return render(request, "register.html", {'m': m})
+    return render(request, "register.html")
 

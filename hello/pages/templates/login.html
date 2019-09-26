@@ -1,0 +1,31 @@
+{% extends 'sample.html' %}
+{% block title %}login page{% endblock %}
+<style>
+  .header{
+  font-size:6px
+  }
+</style>
+{% block body %}
+
+
+<div class="container form-group my-5">
+<form action="{% url 'verify_login' %}" method="POST">
+{% csrf_token %}
+  <center><table>
+    <tr>
+    <th colspan="2"> <header>LOgin form</header></th></tr>
+    <tr>
+  <td>
+    <label id="username">username :</label></td>
+      <td><input type="text" name="username"></td>
+    </tr>
+    <tr>
+  <td>
+    <label id="password">password :</label></td>
+      <td><input type="password" name="password"></td>
+    </tr>
+    <tr><td><button type="submit"  class="btn btn-primary" >submit</button></td></tr>
+  </table></center>
+</form>
+</div>
+  {% endblock %}
