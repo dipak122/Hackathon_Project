@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from . models import registeringo
+from . models import registeringo,logtable
+
 #from . models import listdb
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -40,8 +41,8 @@ def verify_login(request):
     for i in param:
         if username == i.username:
             if password == i.password:
-                return render(request,'index.html',{'username':username})
-    
+                return render(request,'index.html')
+
             else:
                 print("password is incorrect ")
                 return render(request,'login.html')
@@ -57,7 +58,7 @@ def verify_login(request):
 
 
 def register(request):
-    return render(request,"register.html", {})
+    return render(request,"register.html")
 
 def register_submission(request):
     if request.method == "POST":
@@ -80,4 +81,17 @@ def register_submission(request):
             Registerinfo.save()
         return render(request, "register.html", {'m': m})
     return render(request, "register.html")
+
+def mobile(request):
+    return render(request,"mobile.html")
+
+def log(request):
+    sr=logtable.objects.all()
+    return render(request,"log.html",{'sr':sr})
+
+def mail(request):
+    print("mail done")
+    return render(request,'mail.html')
+
+
 

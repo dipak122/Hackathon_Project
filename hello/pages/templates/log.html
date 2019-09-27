@@ -1,0 +1,26 @@
+{% extends 'sample.html' %}
+{% block title %}LOG {% endblock %}
+
+
+{% block body %}
+ <div class="container">
+    {% if sr %}
+    {% for i in sr%}
+    <table border="0px" width="300px">
+      <tr>
+        <td>Name</td>
+        <td>{{i.name}}</td>
+      </tr>
+
+      <tr>
+        <td>service</td>
+        <td>{{i.service}}</td>
+      </tr>
+    </table>
+    <hr>
+  {% endfor %}
+{% endif %}
+
+
+  </div>
+{% endblock %}
