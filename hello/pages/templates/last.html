@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(last.jpg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=Date],input[type=time] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=Date]:focus,input[type=time]:focus,small {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+
+form { 
+margin: 0 auto; 
+width:400px;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php" >
+  <div class="container" style="width: 30rem;">
+    <h1>Last</h1>
+    <p>Please fill following details</p>
+    <hr>
+    <label for="Adress"><b>Address</b></label>
+    <input type="text" placeholder="Adress" name="Adress" required>
+    <label for="Description"><b>Description</b></label>
+    <input type="text" placeholder="Write in brief about the problem in your device" name="Description" required>
+    <label for="Date"><b>Choose a Date for service</b></label>
+    <input type="Date" id="Date" name="Date" required>
+    <label for="appt"><b>Choose a time for your meeting:</b></label>
+    <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+    <small>Office hours are 9am to 6pm</small>
+    <br>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>    
+
+    <button type="submit" class="registerbtn">Book Now</button>
+  </div>
+  
+</form>
+
+</body>
+</html>
