@@ -91,14 +91,16 @@
 	<div class="modal-contents">
 
 		<div class="close">+</div>
-		<form action="">
-<select>
-
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="opel">Opel</option>
-  <option value="audi">Audi</option>
+		<form action="{% url 'register' %}" method="post">
+{% csrf_token %}
+<select name="dropdown">
+	<option selected="selected" disabled>Select Your Brand</option>
+  <option value="iphone">iphone</option>
+  <option value="Realme">Realme</option>
+  <option value="Vivo">Vivo</option>
+  <option value="oppo">oppo</option>
   </select>
+            <button type="submit" class="btn btn-success">Success</button>
 </form>
 
 

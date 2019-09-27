@@ -102,7 +102,13 @@ def last(request):
     return render(request,'last.html')
 
 def register(request):
-    print("mail done")
+    if request.method == 'POST':
+        m=request.POST['dropdown']
+        print(m)
+    #     if m.is_valid():
+    #         k=m.cleaned_data['value']
+    #         print(k)
+    # print("mail done")
     return render(request,'register.html')
 
 
