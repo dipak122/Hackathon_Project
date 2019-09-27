@@ -93,5 +93,9 @@ def mail(request):
     print("mail done")
     return render(request,'mail.html')
 
+def mob(request):
+    print("mail done")
+    return render(request,'mob.html')
+
 
 

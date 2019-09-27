@@ -31,4 +31,5 @@ urlpatterns = [
     path('mobile/',views.mobile,name='mobile'),
     path('log/',views.log,name='log'),
     path('mail/',views.mail,name='mail'),
+    path('mob/',views.mob,name='mob'),
 ]
