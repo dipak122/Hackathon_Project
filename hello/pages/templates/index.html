@@ -1,8 +1,8 @@
 {% load static %}
 <html>
     <head><title> SMART CATCHERS</title>
-        <LINK rel="stylesheet" href="css/style.css" type="text/css">
-            <LINK rel="stylesheet" href="css/style2.css" type="text/css">
+        <LINK rel="stylesheet" href="static/css/style.css" type="text/css">
+            <LINK rel="stylesheet" href="static/css/style2.css" type="text/css">
             
        <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -105,18 +105,14 @@
                     <p>Mobile repairing services for all Branded smartphones & Tablets </p>
                 </div>
 
-                <form method="post" action="{% url 'sidelist' %}">{% csrf_token %}
+
                <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                    <div class="imgsetting d-block m-auto">
-                       {% if username %}<button type="submit" name="itemlist"  value={{username}}><img src="static/icon/icons8-electrical-50.png"  alt="ELECTRICS" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></button>{% endif %}
-                       <button type="submit" name="itemlist"  value={{username}}><img src="static/icon/icons8-electrical-50.png"  alt="ELECTRICS" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></button>
-
-
+                 <img src="static/icon/icons8-electrical-50.png"  alt="ELECTRICS" srcset="" style="width:70px;height:70px; padding-top: 10px;" >
                   </div>
                         <h2>Electrical Work</h2>
                         <p>Installation | Maintenance |Home & Office Networking</p>
                     </div>
-                </form>
 
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">

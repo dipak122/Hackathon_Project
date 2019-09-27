@@ -10,12 +10,6 @@ def index(request):
 
 
 def sidelist(request):
-    if request.method == 'POST':
-        m=request.POST.get('itemlist')
-        print(m)
-        m=m[:9]
-        return render(request,'sidelist.html',{'m':m})
-
     return render(request,'sidelist.html')
 
 def itemlist(request):
@@ -47,8 +41,7 @@ def verify_login(request):
         if username == i.username:
             if password == i.password:
                 return render(request,'index.html',{'username':username})
-                #par=''
-                #return list_notice(request,par)
+    
             else:
                 print("password is incorrect ")
                 return render(request,'login.html')
