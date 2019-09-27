@@ -15,7 +15,7 @@ class logtable(models.Model):
     name =models.CharField(max_length=20)
     brand =models.CharField(max_length=20)
     service =models.CharField(max_length=20)
-    email =models.EmailField(max_length=20)
+    email =models.TextField(max_length=20)
     address=models.TextField(max_length=8)
     des = models.TextField(max_length=50)
     date = models.TextField(max_length=10)
