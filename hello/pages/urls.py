@@ -32,4 +32,6 @@ urlpatterns = [
     path('log/',views.log,name='log'),
     path('mail/',views.mail,name='mail'),
     path('mob/',views.mob,name='mob'),
+    path('last/',views.last,name='last'),
+    path('register/',views.register,name='register'),
 ]

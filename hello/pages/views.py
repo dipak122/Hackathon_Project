@@ -97,5 +97,13 @@ def mob(request):
     print("mail done")
     return render(request,'mob.html')
 
+def last(request):
+    print("mail done")
+    return render(request,'last.html')
+
+def register(request):
+    print("mail done")
+    return render(request,'register.html')
+
 
 

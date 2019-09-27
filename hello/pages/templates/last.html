@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(last.jpg);
+  background-image: url({% static 'img/last.jpg' %});
 }
 
 * {
@@ -76,8 +77,8 @@ width:400px;
     <h1>Last</h1>
     <p>Please fill following details</p>
     <hr>
-    <label for="Adress"><b>Address</b></label>
-    <input type="text" placeholder="Adress" name="Adress" required>
+    <label for="Address"><b>Address</b></label>
+    <input type="text" placeholder="Address" name="Address" required>
     <label for="Description"><b>Description</b></label>
     <input type="text" placeholder="Write in brief about the problem in your device" name="Description" required>
     <label for="Date"><b>Choose a Date for service</b></label>
