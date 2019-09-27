@@ -12,6 +12,7 @@ import datetime
 
 
 class logtable(models.Model):
+    opt =models.IntegerField()
     name =models.CharField(max_length=20)
     brand =models.CharField(max_length=20)
     service =models.CharField(max_length=20)

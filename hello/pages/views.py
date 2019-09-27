@@ -189,7 +189,7 @@ def last_submission(request):
 
 
 
-        k=logtable(name=name,brand=model,service=service,email=email,address=address,des=desc,date=date,time=time)
+        k=logtable(opt=opt,name=name,brand=model,service=service,email=email,address=address,des=desc,date=date,time=time)
         k.save()
         return render(request, 'index.html',{'par':par})
 
@@ -198,7 +198,14 @@ def last_submission(request):
 
 
 
+def agents(request):
+    #m=logtable.objects.all()
 
+    sr=logtable.objects.filter(brand="mobile").values('opt','name','brand','email','address','des','date','time')
+    sr=sr[::-1]
+
+    print(sr)
+    return render(request,'agents.html',{'sr':sr})
 
 
 
