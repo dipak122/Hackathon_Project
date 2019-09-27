@@ -35,4 +35,7 @@ urlpatterns = [
     path('last/',views.last,name='last'),
     path('register/',views.register,name='register'),
     path('register_d/',views.register_d,name='register_d'),
+    path('last_submission/',views.last_submission,name='last_submission'),
+
+
 ]

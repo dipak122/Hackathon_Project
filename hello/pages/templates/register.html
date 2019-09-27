@@ -24,6 +24,8 @@ body {
   box-sizing: border-box;
 }
 textarea {
+  rows:1;
+
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -69,8 +71,10 @@ hr {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 150x;
   opacity: 0.9;
+  radius : 10;
+
 }
 
 .registerbtn:hover {
@@ -95,25 +99,28 @@ width:400px;
 </head>
 <body>
 <div class="alert alert-danger" role="alert">
- IF already registered please <a href="{% url 'login' %}">Sign in</a>
+  IF already registered please <form method="POST" action="{% url 'login' %}">{% csrf_token %}
+  <input type="hidden" id="custId" name="model" value="{{model}}">
+
+
+   <button type="submit" class="registerbtn" name="but" value="{{m}}">Signin</button>
+</form>
 </div>
-{% if m %}
-{{m|safe}}
-{% endif %}
+
 <form action="{% url 'register_submission' %}" method="POST">{% csrf_token %}
   <div class="container" style="width: 30rem;">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="Name"><b>Name</b></label>
-    <textarea type="text" placeholder="Enter Name" name="name"  required >{% if name %}{{name}} {% endif %}</textarea>
+    <textarea  rows="1" type="text" placeholder="Enter Name" name="name"  required >{% if name %}{{name}} {% endif %}</textarea>
     <label for="username"><b>Username</b></label>
-     <textarea  type="text" placeholder="Enter Username" name="Username" required>{% if username %}{{username}}{% endif %}</textarea>
+     <textarea rows="1" type="text" placeholder="Enter Username" name="Username" required>{% if username %}{{username}}{% endif %}</textarea>
     <label for="Address"><b>Address</b></label>
-    <textarea  type="text" placeholder="Address" name="Address" required>{% if address %}{{address}}{% endif %}</textarea>
+    <textarea rows="1"  type="text" placeholder="Address" name="Address" required>{% if address %}{{address}}{% endif %}</textarea>
 
     <label for="email"><b>Email</b></label>
-    <textarea  type="text" placeholder="Enter Email" name="email" required>{% if email %}{{email}}{% endif %}</textarea>
+    <textarea rows="1" type="email" placeholder="Enter Email" name="email" required>{% if email %}{{email}}{% endif %}</textarea>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
@@ -121,7 +128,7 @@ width:400px;
     <label for="psw_repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw_repeat" required>
     <hr>
-
+<input type="hidden" id="{{model}}" name="model" value="{{model}}">
     <button type="submit" class="registerbtn">Register</button>
   </div>
   

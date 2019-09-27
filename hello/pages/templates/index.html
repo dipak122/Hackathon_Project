@@ -1,8 +1,8 @@
 {% load static %}
 <html>
     <head><title> SMART CATCHERS</title>
-        <LINK rel="stylesheet" href="static/css/style.css" type="text/css">
-            <LINK rel="stylesheet" href="static/css/style2.css" type="text/css">
+        <LINK rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+            <LINK rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css">
             
        <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -41,6 +41,7 @@
 <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script> 
         </head>
     <BODY>
+    {{par|safe}}
 <!-- partial:index.partial.html -->
 <div>
   
@@ -100,7 +101,7 @@
            
             <DIV class="row rowsetting">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                    <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-mobile-64.png" alt="MOBILE" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-mobile-64.png' %}" alt="MOBILE" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
                     <h2><a href="{% url 'mob' %}">Mobile repair</a></h2>
                     <p>Mobile repairing services for all Branded smartphones & Tablets </p>
                 </div>
@@ -108,7 +109,7 @@
 
                <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                    <div class="imgsetting d-block m-auto">
-                 <img src="static/icon/icons8-electrical-50.png"  alt="ELECTRICS" srcset="" style="width:70px;height:70px; padding-top: 10px;" >
+                 <img src="{% static 'icon/icons8-electrical-50.png' %}"  alt="ELECTRICS" srcset="" style="width:70px;height:70px; padding-top: 10px;" >
                   </div>
                         <h2>Electrical Work</h2>
                         <p>Installation | Maintenance |Home & Office Networking</p>
@@ -116,7 +117,7 @@
 
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                            <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-paint-roller-64.png" alt="PAINTING" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
+                            <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-paint-roller-64.png' %}" alt="PAINTING" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
                             <h2>Painting</h2>
                             <p>Expert Consultation on colours | Complete service of Painting</p>
                         </div>
@@ -127,20 +128,20 @@
 
             <DIV class="row rowsetting">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                    <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-computer-support-80.png" alt="LAPTOP" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-computer-support-80.png' %}" alt="LAPTOP" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
                     <h2>Laptop Repairing</h2>
                     <p>Repair service provider For Desktop PC ,Laptop & Accesories</p> 
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                        <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-bullet-camera-50.png" alt="CCTV" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                        <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-bullet-camera-50.png' %}" alt="CCTV" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
                         <h2>CCTV Services</h2>
                         <p>All types of cctv Cameras repairing  & installation</p>
                     </div>
 
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                            <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-barber-chair-50.png" alt="SALOON" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
+                            <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-barber-chair-50.png' %}" alt="SALOON" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
                             <h2>Salon</h2>
                             <p>Get the best salon Service at Home from Experts</p>
                         </div>
@@ -150,26 +151,22 @@
             </DIV>
             <DIV class="row rowsetting">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                    <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-air-conditioner-64.png" alt="AC" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-air-conditioner-64.png' %}" alt="AC" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
                     <h2>AC Repairing</h2>
                     <p>All types of Air-condition's Service & Maintainance </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                    <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-cockroach-80.png" alt="PEST" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-cockroach-80.png' %}" alt="PEST" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
                     <h2>Pest Control</h2>
                     <p>Book professional Pest Control Srvices in Near by you</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                    <div class="imgsetting d-block m-auto"> <img src="static/icon/icons8-tax-64.png" alt="tax" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-tax-64.png' %}" alt="tax" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
                     <h2>Account & Taxation</h2>
                     <p>Service Provider of Direct Taxation Services , TDS return ,Consultant</p>
                 </div>
             </DIV>
-
-
-
-
-
+          </div>
         </section>
 
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 

@@ -1,25 +1,42 @@
 {% extends 'sample.html' %}
 {% block title %}LOG {% endblock %}
+ {% block style %} <style> .example-table th { padding: 15px; } </style> {% endblock %}
+
 
 
 {% block body %}
- <div class="container">
-    {% if sr %}
-    {% for i in sr%}
-    <table border="0px" width="300px">
-      <tr>
-        <td>Name</td>
-        <td>{{i.name}}</td>
-      </tr>
+ <div class="container my-2">
 
+    <table class="example-table" border="1px" width="300px">
       <tr>
-        <td>service</td>
-        <td>{{i.service}}</td>
+        <th>Name</th>
+           <th>MOdel</th>
+           <th>service</th>
+           <th>email</th>
+          <th>Description</th>
+            <th>Address</th>
+           <th>Date</th>
+           <th>Time</th>
+
       </tr>
-    </table>
-    <hr>
-  {% endfor %}
+          {% if sr %}
+    {% for i in sr%}
+        <tr>
+            <th>{{i.name}}</th>
+
+        <th>{{i.service}}</th>
+        <th>{{i.brand}}</th>
+               <th>{{i.email}}</th>
+        <th>{{i.des}}</th>
+        <th>{{i.address}}</th>
+        <th>{{i.date}}</th>
+        <th>{{i.time}}</th>
+      </tr>
+         {% endfor %}
 {% endif %}
+    </table>
+
+
 
 
   </div>

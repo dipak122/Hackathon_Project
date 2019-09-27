@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from . models import registeringo,logtable
+from django.core.mail import EmailMessage
+from django.http import HttpResponseRedirect
+from random import randint
 
 #from . models import listdb
 from django.contrib import messages
@@ -30,19 +33,28 @@ def addbook(request):
 
 
 def login(request):
+    if request.method == 'POST':
+        val= request.POST['but']
+        model= request.POST['model']
+        print(val)
+        return render(request, 'login.html',{'val':val,'model':model})
+
     return render(request,'login.html')
 
 def verify_login(request):
     if request.method == 'POST':
-        username = request.POST.get('uname')
-        password = request.POST.get('psw')
+        username = request.POST['uname']
+        password = request.POST['psw']
+        val = request.POST['but']
+        model = request.POST['model']
+        print(val)
 
         param = registeringo.objects.all()
 
         for i in param:
             if username == i.username:
                 if password == i.password:
-                    return render(request,'last.html',{'address':i.address})
+                    return render(request,'last.html',{'address':i.address,'name':i.name,'val':val,'model':model})
 
                 else:
                     print("password is incorrect ")
@@ -69,6 +81,7 @@ def register_submission(request):
         for i in m:
             e.append(i.email)
 
+        model=request.POST['model']
         name=request.POST['name']
         Username=request.POST['Username']
         Address=request.POST['Address']
@@ -80,7 +93,7 @@ def register_submission(request):
             Registerinfo=registeringo(name=name, username=Username,address=Address,email=email,password=psw)
             Registerinfo.save()
             print(Address)
-            return render(request,'last.html',{'address':Address})
+            return render(request,'last.html',{'address':Address,'name':name,'model':model})
         elif psw != psw_repeat:
             print("password not match")
             return render(request, 'register.html', {'name':name, 'username': Username,'address': Address,'email': email} )
@@ -122,6 +135,8 @@ def mobile(request):
 
 def log(request):
     sr=logtable.objects.all()
+    sr=list(sr)
+    sr=sr[::-1]
     return render(request,"log.html",{'sr':sr})
 
 def mail(request):
@@ -139,12 +154,51 @@ def last(request):
 def register_d(request):
     if request.method == 'POST':
         m=request.POST['dropdown']
+        model=request.POST['mobile']
         print(m)
+        return render(request, 'register.html',{'m':m,'model':model})
+
     #     if m.is_valid():
     #         k=m.cleaned_data['value']
     #         print(k)
     # print("mail done")
-    return render(request,'register.html')
+
+
+
+def last_submission(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        model = request.POST['model']
+        email = request.POST['email']
+        address = request.POST['Address']
+        desc = request.POST['Description']
+        date = request.POST['Date']
+        time = request.POST['appt']
+        service = request.POST['val']
+
+
+
+        opt=randint(1000, 9999)
+        par = '''<script language="javascript">
+                            alert('Your booking has been successfully done!!! and further details has been send to your email');
+                            </script>'''
+        print(opt)
+        body='Your booking has been successfully done!!! and Your OTP is '+str(opt)
+        email = EmailMessage('Smartcatcher', body, to=[email])
+        email.send()
+
+
+
+        k=logtable(name=name,brand=model,service=service,email=email,address=address,des=desc,date=date,time=time)
+        k.save()
+        return render(request, 'index.html',{'par':par})
+
+    else:
+        return render(request, 'index.html')
+
+
+
+
 
 
 

@@ -88,12 +88,12 @@ span.psw {
   <div><h3 style="text-align:center; " >Login</h3></div>
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username {{val}}" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
+ <input type="hidden" id="custId" name="model" value="{{model}}">
+    <button type="submit" name="but" value={{val}}>Login</button>
 
   </div>
 
