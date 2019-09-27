@@ -71,9 +71,12 @@ def register_submission(request):
         password=request.POST["Password"]
         f=1
         if username in k :
+            par = '''<script language="javascript">
+                    alert('Already registered please Sign in or use different name');
+                    </script>'''
             print("Username already exit")
             m = 'user already exist'
-            return render(request, "register.html", {'m': m})
+            return render(request, "register.html", {'m': par})
         else:
 
             Registerinfo = registeringo(username=username,password=password)

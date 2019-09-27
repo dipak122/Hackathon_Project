@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'sample.html' %}
+{% block title %}Register{% endblock %}
+
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url({% static 'img/reg.jpg' %});
+  background-image: url(static/img/reg.jpg);
 }
 
 * {
@@ -67,15 +65,21 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
-form { 
-margin: 0 auto; 
+form {
+margin: 0 auto;
 width:400px;
 }
 </style>
-</head>
-<body>
+{% block body %}
 
-<form action="/action_page.php" >
+
+<div class="alert alert-danger" role="alert">
+ IF already registered please sign in
+</div>
+{% if m %}
+{{m|safe}}
+{% endif %}
+<form action="{% url 'register_submission' %}" >
   <div class="container" style="width: 30rem;">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -106,5 +110,4 @@ width:400px;
   </div>
 </form>
 
-</body>
-</html>
+{% endblock %}
