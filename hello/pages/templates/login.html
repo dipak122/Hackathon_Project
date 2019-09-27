@@ -84,7 +84,7 @@ span.psw {
 </style>
 </head>
 <body>
-  <form action="action_page.php" method="post">
+  <form action="{% url 'verify_login' %}" method="post">{% csrf_token %}
   <div><h3 style="text-align:center; " >Login</h3></div>
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -94,9 +94,7 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+
   </div>
 
   <div class="container" style="background-color:#f1f1f1">

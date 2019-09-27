@@ -34,4 +34,5 @@ urlpatterns = [
     path('mob/',views.mob,name='mob'),
     path('last/',views.last,name='last'),
     path('register/',views.register,name='register'),
+    path('register_d/',views.register_d,name='register_d'),
 ]

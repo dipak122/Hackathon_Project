@@ -33,24 +33,23 @@ def login(request):
     return render(request,'login.html')
 
 def verify_login(request):
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+    if request.method == 'POST':
+        username = request.POST.get('uname')
+        password = request.POST.get('psw')
 
-    param = registeringo.objects.all()
+        param = registeringo.objects.all()
 
-    for i in param:
-        if username == i.username:
-            if password == i.password:
-                return render(request,'index.html')
+        for i in param:
+            if username == i.username:
+                if password == i.password:
+                    return render(request,'last.html',{'address':i.address})
 
+                else:
+                    print("password is incorrect ")
+                    return render(request,'login.html')
             else:
-                print("password is incorrect ")
+                print("user not exit")
                 return render(request,'login.html')
-        else:
-            print("user not exit")
-            return render(request,'login.html')
-
-
 
     return render(request,'index.html')
 
@@ -61,29 +60,62 @@ def register(request):
     return render(request,"register.html")
 
 def register_submission(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         m=registeringo.objects.all()
         k=[]
+        e=[]
         for i in m:
             k.append(i.username)
+        for i in m:
+            e.append(i.email)
 
-        username=request.POST["Username"]
-        password=request.POST["Password"]
-        f=1
-        if username in k :
-            par = '''<script language="javascript">
-                    alert('Already registered please Sign in or use different name');
-                    </script>'''
-            print("Username already exit")
-            m = 'user already exist'
-            return render(request, "register.html", {'m': par})
-        else:
-
-            Registerinfo = registeringo(username=username,password=password)
-            m='successfully registered'
+        name=request.POST['name']
+        Username=request.POST['Username']
+        Address=request.POST['Address']
+        email=request.POST['email']
+        psw=request.POST['psw']
+        psw_repeat=request.POST["psw_repeat"]
+        print(name)
+        if psw == psw_repeat and Username not in k:
+            Registerinfo=registeringo(name=name, username=Username,address=Address,email=email,password=psw)
             Registerinfo.save()
-        return render(request, "register.html", {'m': m})
+            print(Address)
+            return render(request,'last.html',{'address':Address})
+        elif psw != psw_repeat:
+            print("password not match")
+            return render(request, 'register.html', {'name':name, 'username': Username,'address': Address,'email': email} )
+
+        elif Username in k:
+            print("username already exist ")
+            return render(request, 'register.html',{'name':name,'address': Address,'email': email} )
+
+        elif email in e:
+            print("username already exist ")
+            return render(request, 'register.html',{'name':name,'address': Address,'username': Username} )
     return render(request, "register.html")
+
+
+
+
+
+
+
+    #
+    #     f=1
+    #     if username in k :
+    #         par = '''<script language="javascript">
+    #                 alert('Already registered please Sign in or use different name');
+    #                 </script>'''
+    #         print("Username already exit")
+    #         m = 'user already exist'
+    #         return render(request, "register.html", {'m': par})
+    #     else:
+    #
+    #         Registerinfo = registeringo(username=username,password=password)
+    #         m='successfully registered'
+    #         Registerinfo.save()
+    #     return render(request, "register.html", {'m': m})
+    # return render(request, "register.html")
 
 def mobile(request):
     return render(request,"mobile.html")
@@ -104,7 +136,7 @@ def last(request):
     print("mail done")
     return render(request,'last.html')
 
-def register(request):
+def register_d(request):
     if request.method == 'POST':
         m=request.POST['dropdown']
         print(m)
