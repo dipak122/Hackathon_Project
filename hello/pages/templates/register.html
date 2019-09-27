@@ -23,6 +23,15 @@ body {
 * {
   box-sizing: border-box;
 }
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+   resize: none;
+}
 
 /* Add padding to containers */
 .container {
@@ -97,14 +106,14 @@ width:400px;
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="Name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name"  {% if name %} value={{name}} {% endif %}required >
+    <textarea type="text" placeholder="Enter Name" name="name"  required >{% if name %}{{name}} {% endif %}</textarea>
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="Username" required>{% if username %}{{username}}{% endif %}
+     <textarea  type="text" placeholder="Enter Username" name="Username" required>{% if username %}{{username}}{% endif %}</textarea>
     <label for="Address"><b>Address</b></label>
-    <input type="text" placeholder="Address" name="Address" required>{% if address %}{{address}}{% endif %}
+    <textarea  type="text" placeholder="Address" name="Address" required>{% if address %}{{address}}{% endif %}</textarea>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>{% if email %}{{email}}{% endif %}
+    <textarea  type="text" placeholder="Enter Email" name="email" required>{% if email %}{{email}}{% endif %}</textarea>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
