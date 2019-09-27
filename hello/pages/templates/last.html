@@ -89,7 +89,7 @@ width:400px;
     <p>Please fill following details</p>
     <hr>
     <label for="Address"><b>Address</b></label>
-    <input type="textarea" placeholder="Enter your permanent Address" name="Address"  {% if address %} value={{address}} {% endif %} required>
+    <textarea placeholder="Enter your permanent Address" name="Address" required>  {% if address %} {{address}} {% endif %}</textarea>
     <label for="Description"><b>Description</b></label>
     <input type="text" placeholder="Write in brief about the problem in your device" name="Description" required>
     <label for="Date"><b>Choose a Date for service</b></label>
