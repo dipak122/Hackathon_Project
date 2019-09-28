@@ -37,6 +37,11 @@ urlpatterns = [
     path('register_d/',views.register_d,name='register_d'),
     path('last_submission/',views.last_submission,name='last_submission'),
     path('agents/',views.agents,name='agents'),
+    path('update/',views.update,name='update'),
+    path('prologin/',views.prologin,name='prologin'),
+    path('proverify_login/',views.proverify_login,name='proverify_login'),
+    path('cancel/',views.cancel,name='cancel'),
+    path('cancelsub/',views.cancelsub,name='cancelsub'),
 
 
 ]

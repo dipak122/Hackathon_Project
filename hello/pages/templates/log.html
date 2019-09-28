@@ -9,9 +9,9 @@
 
     <table class="example-table" border="1px" width="300px">
       <tr>
-          <th>OPT</th>
+          <th>OTP</th>
         <th>Name</th>
-           <th>MOdel</th>
+           <th>Brand</th>
            <th>service</th>
            <th>email</th>
           <th>Description</th>
@@ -23,11 +23,12 @@
           {% if sr %}
     {% for i in sr%}
         <tr>
-            <th>{{i.opt}}</th>
+            <th>{{i.otp}}</th>
             <th>{{i.name}}</th>
 
-        <th>{{i.service}}</th>
+
         <th>{{i.brand}}</th>
+            <th>{{i.service}}</th>
                <th>{{i.email}}</th>
         <th>{{i.des}}</th>
         <th>{{i.address}}</th>

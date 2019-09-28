@@ -100,10 +100,10 @@ width:400px;
 <body>
 <div class="alert alert-danger" role="alert">
   IF already registered please <form method="POST" action="{% url 'login' %}">{% csrf_token %}
-  <input type="hidden" id="custId" name="model" value="{{model}}">
+  <input type="hidden" id="custId" name="service" value="{{service}}">
 
 
-   <button type="submit" class="registerbtn" name="but" value="{{m}}">Signin</button>
+   <button type="submit" class="registerbtn" name="brand" value="{{brand}}">Signin</button>
 </form>
 </div>
 

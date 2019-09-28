@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import registeringo,logtable
+from . models import registeringo,logtable,proregisteringo
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 from random import randint
@@ -34,10 +34,10 @@ def addbook(request):
 
 def login(request):
     if request.method == 'POST':
-        val= request.POST['but']
-        model= request.POST['model']
-        print(val)
-        return render(request, 'login.html',{'val':val,'model':model})
+        service= request.POST['service']
+        brand= request.POST['brand']
+
+        return render(request, 'login.html',{'service':service,'brand':brand})
 
     return render(request,'login.html')
 
@@ -45,23 +45,20 @@ def verify_login(request):
     if request.method == 'POST':
         username = request.POST['uname']
         password = request.POST['psw']
-        val = request.POST['but']
-        model = request.POST['model']
-        print(val)
+        service = request.POST['service']
+        brand = request.POST['brand']
 
         param = registeringo.objects.all()
 
         for i in param:
             if username == i.username:
                 if password == i.password:
-                    return render(request,'last.html',{'address':i.address,'name':i.name,'val':val,'model':model})
+                    return render(request,'last.html',{'address':i.address,'name':i.name,'brand':brand,'service':service})
 
                 else:
                     print("password is incorrect ")
                     return render(request,'login.html')
-            else:
-                print("user not exit")
-                return render(request,'login.html')
+
 
     return render(request,'index.html')
 
@@ -153,10 +150,10 @@ def last(request):
 
 def register_d(request):
     if request.method == 'POST':
-        m=request.POST['dropdown']
-        model=request.POST['mobile']
-        print(m)
-        return render(request, 'register.html',{'m':m,'model':model})
+        brand=request.POST['dropdown']
+        service=request.POST['mobile']
+        print(service)
+        return render(request, 'register.html',{'brand':brand,'service':service})
 
     #     if m.is_valid():
     #         k=m.cleaned_data['value']
@@ -168,28 +165,28 @@ def register_d(request):
 def last_submission(request):
     if request.method == 'POST':
         name = request.POST['name']
-        model = request.POST['model']
+        brand = request.POST['brand']
         email = request.POST['email']
         address = request.POST['Address']
         desc = request.POST['Description']
         date = request.POST['Date']
         time = request.POST['appt']
-        service = request.POST['val']
+        service = request.POST['service']
 
 
 
-        opt=randint(1000, 9999)
+        otp=randint(1000, 9999)
         par = '''<script language="javascript">
                             alert('Your booking has been successfully done!!! and further details has been send to your email');
                             </script>'''
-        print(opt)
-        body='Your booking has been successfully done!!! and Your OTP is '+str(opt)
+        print(otp)
+        body='Your booking has been successfully done!!! and Your OTP is '+str(otp)
         email = EmailMessage('Smartcatcher', body, to=[email])
         email.send()
 
 
 
-        k=logtable(opt=opt,name=name,brand=model,service=service,email=email,address=address,des=desc,date=date,time=time)
+        k=logtable(otp=otp,name=name,brand=brand,service=service,email=email,address=address,des=desc,date=date,time=time)
         k.save()
         return render(request, 'index.html',{'par':par})
 
@@ -201,11 +198,82 @@ def last_submission(request):
 def agents(request):
     #m=logtable.objects.all()
 
-    sr=logtable.objects.filter(brand="mobile").values('opt','name','brand','email','address','des','date','time')
+
+    sr=logtable.objects.filter(service="mobile").values('otp','name','brand','service','email','address','des','date','status','time')
     sr=sr[::-1]
 
     print(sr)
     return render(request,'agents.html',{'sr':sr})
 
+def update(request):
+    newotp = request.POST['newotp']
+    otp = request.POST['otp']
+    if otp==newotp:
+        t = logtable.objects.get(otp=otp)
+        t.status = 'Done'  # change field
+        t.save()  # thi
+        print("done")
+
+
+
+    else:
+        print("no update")
+    return HttpResponseRedirect('/agents/')
+
+
+
+
+def prologin(request):
+
+    return render(request,'prologin.html')
+
+def proverify_login(request):
+
+    username = request.POST['uname']
+    password = request.POST['psw']
+    print(username)
+    print(password)
+    param = proregisteringo.objects.all()
+
+    for i in param:
+        print(i.username)
+        print(i.password)
+        if username == i.username:
+            if password == i.password:
+                print("i m inuser")
+                t = proregisteringo.objects.get(username=username)
+                service = t.service
+                print(service)
+                if service=='mobile':
+                    return HttpResponseRedirect('/agents/')
+
+            else:
+                print("password is incorrect ")
+                return render(request,'prologin.html')
+            # else:
+            #     print("user not exit")
+            #     return render(request,'prologin.html')
+
+    return render(request,'index.html')
+
+
+def cancel(request):
+    return render(request,'cancel.html')
+
+def cancelsub(request):
+    otp=request.POST['otp']
+    m=logtable.objects.filter(otp=otp)
+    if m:
+        m.delete()
+        par = '''<script language="javascript">
+                                            alert('Your booking has been successfully cancelled');
+                                            </script>'''
+        return render(request,'index.html',{'par':par})
+
+    else:
+        par = '''<script language="javascript">
+                                    alert('Please Enter correct OTP');
+                                    </script>'''
+        return render(request, 'cancel.html', {'par': par})
 
 

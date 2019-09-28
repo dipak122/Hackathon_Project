@@ -5,41 +5,57 @@
 
 
 {% block body %}
- <div class="container my-2">
 
-    <table class="example-table" border="1px" width="300px">
+
+     {% if sr %}
+    {% for i in sr%}
+ <div class="container my-4">
+     <form action="{% url 'update' %}" method='POST' >{% csrf_token %}
+  <table border="1" class="example-table th">
       <tr>
-          <th>OPT</th>
-        <th>Name</th>
-           <th>MOdel</th>
+
+            <th>Name</th>
+           <th>brand</th>
            <th>service</th>
            <th>email</th>
           <th>Description</th>
             <th>Address</th>
            <th>Date</th>
            <th>Time</th>
+           <th>enter OTP</th>
+           <th>status</th>
+           <th>submit</th>
 
       </tr>
-          {% if sr %}
-    {% for i in sr%}
-        <tr>
-            <th>{{i.opt}}</th>
-            <th>{{i.name}}</th>
 
+        <tr>
+<!---->
+            <th>{{i.name}}</th>
+<th>{{i.brand}}</th>
         <th>{{i.service}}</th>
-        <th>{{i.brand}}</th>
                <th>{{i.email}}</th>
         <th>{{i.des}}</th>
         <th>{{i.address}}</th>
         <th>{{i.date}}</th>
         <th>{{i.time}}</th>
+        <th><input type="text" name="newotp" maxlength="4"></th>
+        <th>{{i.status}}</th>
+        <th><button type="submit" class="btn btn-primary" name="otp" value="{{i.otp}}" >Primary</button></th>
+<!--           -->
+
       </tr>
-         {% endfor %}
-{% endif %}
+
+
     </table>
 
+          </form>
+      </div>
+
+              {% endfor %}
+{% endif %}
 
 
 
-  </div>
+
+
 {% endblock %}

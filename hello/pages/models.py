@@ -12,7 +12,7 @@ import datetime
 
 
 class logtable(models.Model):
-    opt =models.IntegerField()
+    otp =models.IntegerField()
     name =models.CharField(max_length=20)
     brand =models.CharField(max_length=20)
     service =models.CharField(max_length=20)
@@ -21,6 +21,7 @@ class logtable(models.Model):
     des = models.TextField(max_length=50)
     date = models.TextField(max_length=10)
     time = models.TextField(max_length=10)
+    status = models.TextField(default="pending")
     #date = models.DateField(_("Date"),default=datetime.date.today)
     #time = models.TimeField(_(u"conversation time"),auto_now_add=True,blank=True)
 
@@ -46,4 +47,23 @@ class registeringo(models.Model):
 
     class Meta:
         db_table = 'registeringo'
+
+
+
+
+class proregisteringo(models.Model):
+    name = models.CharField(max_length=10)
+    username=models.CharField(max_length=20)
+    password=models.CharField(max_length=8)
+    email=models.TextField(max_length=20)
+    address=models.TextField(max_length=8)
+    phone=models.TextField(max_length=10)
+    service= models.TextField(max_length=10)
+
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        db_table = 'proregisteringo'
 
