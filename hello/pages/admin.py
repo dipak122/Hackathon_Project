@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from . models import registeringo,logtable,proregisteringo
+from . models import registeringo,logtable,proregisteringo,feedadd
 
 #admin.site.register(listdb)
 
@@ -9,3 +9,4 @@ from . models import registeringo,logtable,proregisteringo
 admin.site.register(registeringo)
 admin.site.register(logtable)
 admin.site.register(proregisteringo)
+admin.site.register(feedadd)

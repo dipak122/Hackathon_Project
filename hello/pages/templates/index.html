@@ -65,10 +65,10 @@
                            <a href="#services" class="nav-link text-white" >SERVICES</a>
                        </li>
                        <li class="navbar-item "> 
-                            <a href="#abtus" class="nav-link text-white">ABOUT US</a>
+                            <a href="{% url 'loginh' %}" class="nav-link text-white" >History</a>
                         </li>
                         <li class="navbar-item  "> 
-                                <a href="" class="nav-link js-scroll-trigger text-white">CONTACT</a>
+                                <a href="{% url 'cancel' %}" class="nav-link js-scroll-trigger text-white">Cancelled Booking </a>
                             </li>
                             <li class="navbar-item "> 
                                     <a href="{% url 'prologin' %}" class="nav-link js-scroll-trigger text-white">Agent login</a>
@@ -106,19 +106,18 @@
                     <p>Mobile repairing services for all Branded smartphones & Tablets </p>
                 </div>
 
-
                <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                    <div class="imgsetting d-block m-auto">
                  <img src="{% static 'icon/icons8-electrical-50.png' %}"  alt="ELECTRICS" srcset="" style="width:70px;height:70px; padding-top: 10px;" >
                   </div>
-                        <h2>Electrical Work</h2>
+                   <h2><a href="{% url 'elec' %}">Electrical Work</a></h2>
                         <p>Installation | Maintenance |Home & Office Networking</p>
                     </div>
 
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                            <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-paint-roller-64.png' %}" alt="PAINTING" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
-                            <h2>Painting</h2>
+                            <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-paint-roller-64.png' %}"  alt="PAINTING" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
+                        <h2><a href="{% url 'paint' %}">Painting </a></h2>
                             <p>Expert Consultation on colours | Complete service of Painting</p>
                         </div>
 
@@ -128,21 +127,21 @@
 
             <DIV class="row rowsetting">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
-                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-computer-support-80.png' %}" alt="LAPTOP" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
-                    <h2>Laptop Repairing</h2>
-                    <p>Repair service provider For Desktop PC ,Laptop & Accesories</p> 
+                    <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-computer-support-80.png' %}"  alt="LAPTOP" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
+                    <h2><a href="{% url 'lap' %}">Laptop Repairing</a></h2>
+                    <p>Repair service provider For Desktop PC ,Laptop & Accesories</p>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                         <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-bullet-camera-50.png' %}" alt="CCTV" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
-                        <h2>CCTV Services</h2>
+                    <h2><a href="{% url 'cctv' %}">CCTV Services</a></h2>
                         <p>All types of cctv Cameras repairing  & installation</p>
                     </div>
 
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                             <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-barber-chair-50.png' %}" alt="SALOON" srcset="" style="width:70px;height:70px; padding-top: 10px;" ></div>
-                            <h2>Salon</h2>
+                        <h2><a href="{% url 'salon' %}">Salon</a></h2>
                             <p>Get the best salon Service at Home from Experts</p>
                         </div>
 
@@ -152,21 +151,25 @@
             <DIV class="row rowsetting">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                     <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-air-conditioner-64.png' %}" alt="AC" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
-                    <h2>AC Repairing</h2>
+                    <h2><a href="{% url 'ac' %}">AC Repairing</a></h2>
                     <p>All types of Air-condition's Service & Maintainance </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                     <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-cockroach-80.png' %}" alt="PEST" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
-                    <h2>Pest Control</h2>
-                    <p>Book professional Pest Control Srvices in Near by you</p>
+                    <h2><a href="{% url 'pest' %}">Pest Control</a></h2>
+                    <p>Book professional Pest Control Services in Near by you</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                     <div class="imgsetting d-block m-auto"> <img src="{% static 'icon/icons8-tax-64.png' %}" alt="tax" srcset="" style="width:70px;height:70px; padding-top: 10px;" > </div>
-                    <h2>Account & Taxation</h2>
+                    <h2><a href="{% url 'acc' %}">Account & Taxation</a></h2>
                     <p>Service Provider of Direct Taxation Services , TDS return ,Consultant</p>
                 </div>
             </DIV>
-          </div>
+
+
+
+
+
         </section>
 
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
@@ -179,7 +182,7 @@
               <h3>Useful Links</h3>
              <h5 id="firstchild">
               <span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Contact Us</b></a></h5>
-             <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>About Us</b></a></h5>
+             <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="{% url 'loginh' %}" class="text-muted"> <b>History</b></a></h5>
              <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Terms & Conditions</b></a></h5>
              <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Private Policy</b></a></h5>
             </div>
@@ -216,7 +219,7 @@
         </footer>
         </div>
         <section class="container-fluid" id="foot5">
-                <h6 class="text-center text-muted ">Copyrights © 2019 SmartCatchers.com</h4>
+                <h4 class="text-center text-muted ">Copyrights © 2019 SmartCatchers.com</h4>
               </section>
     <!--  <script type="text/javascript"> 
       $('.js-scroll-trigger').click(function(){

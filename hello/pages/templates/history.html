@@ -1,0 +1,57 @@
+{% extends 'sample.html' %}
+{% block title %}Agents {% endblock %}
+ {% block style %} <style> .example-table th { padding: 15px; } </style> {% endblock %}
+
+
+
+{% block body %}
+{% if par %}
+{{par|safe}}
+{% endif %}
+     {% if sr %}
+    {% for i in sr%}
+ <div class="container my-4">
+     <form action="{% url 'feedback' %}" method='POST' >{% csrf_token %}
+  <table border="1" class="example-table th">
+      <tr>
+
+            <th>Service Provider</th>
+           <th>brand</th>
+           <th>service</th>
+          <th>Description</th>
+           <th>Date</th>
+           <th>Time</th>
+           <th>Feedback</th>
+           <th>submit</th>
+
+      </tr>
+
+        <tr>
+<!---->
+            <th>{{i.servicep}}</th>
+<th>{{i.brand}}</th>
+        <th>{{i.service}}</th>
+        <th>{{i.des}}</th>
+
+        <th>{{i.date}}</th>
+        <th>{{i.time}}</th>
+        <th><input type="text" name="feed" maxlength="20"></th>
+        <th><button type="submit" class="btn btn-primary" name="servicep" value="{{i.servicep}}" >submit</button></th>
+
+
+      </tr>
+
+
+    </table>
+
+          </form>
+      </div>
+
+              {% endfor %}
+{% endif %}
+
+
+
+
+
+{% endblock %}

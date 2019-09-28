@@ -13,11 +13,13 @@
         <th>Name</th>
            <th>Brand</th>
            <th>service</th>
-           <th>email</th>
           <th>Description</th>
             <th>Address</th>
            <th>Date</th>
            <th>Time</th>
+
+           <th>Service Provider</th>
+           <th>Status</th>
 
       </tr>
           {% if sr %}
@@ -25,15 +27,15 @@
         <tr>
             <th>{{i.otp}}</th>
             <th>{{i.name}}</th>
-
-
         <th>{{i.brand}}</th>
             <th>{{i.service}}</th>
-               <th>{{i.email}}</th>
+
         <th>{{i.des}}</th>
         <th>{{i.address}}</th>
         <th>{{i.date}}</th>
         <th>{{i.time}}</th>
+        <th>{{i.servicep}}</th>
+        <th>{{i.status}}</th>
       </tr>
          {% endfor %}
 {% endif %}

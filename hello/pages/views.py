@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import registeringo,logtable,proregisteringo
+from . models import registeringo,logtable,proregisteringo,feedadd
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 from random import randint
@@ -170,8 +170,11 @@ def last_submission(request):
         address = request.POST['Address']
         desc = request.POST['Description']
         date = request.POST['Date']
-        time = request.POST['appt']
         service = request.POST['service']
+        servicep = request.POST['dropdown']
+        time = request.POST['dropdownt']
+
+
 
 
 
@@ -180,13 +183,21 @@ def last_submission(request):
                             alert('Your booking has been successfully done!!! and further details has been send to your email');
                             </script>'''
         print(otp)
-        body='Your booking has been successfully done!!! and Your OTP is '+str(otp)
+        n='on  '+str(date)
+        w= 'will provide you service at '+str(time)+' '
+        body='Your booking has been successfully done !!! and Your OTP is this '+str(otp)+'  '+str(servicep)+' '+w+n
         email = EmailMessage('Smartcatcher', body, to=[email])
+        email.send()
+        k=proregisteringo.objects.get(name=servicep)
+        l=k.email
+        print(l)
+        p='you have an appointment at '+str(date)+' and on time '+str(time)
+        email = EmailMessage(p, p, to=[l])
         email.send()
 
 
 
-        k=logtable(otp=otp,name=name,brand=brand,service=service,email=email,address=address,des=desc,date=date,time=time)
+        k=logtable(otp=otp,name=name,brand=brand,service=service,servicep=servicep,email=email,address=address,des=desc,date=date,time=time)
         k.save()
         return render(request, 'index.html',{'par':par})
 
@@ -199,7 +210,7 @@ def agents(request):
     #m=logtable.objects.all()
 
 
-    sr=logtable.objects.filter(service="mobile").values('otp','name','brand','service','email','address','des','date','status','time')
+    sr=logtable.objects.filter(service="mobile").values('otp','name','brand','service','servicep','address','des','date','status','time')
     sr=sr[::-1]
 
     print(sr)
@@ -277,3 +288,68 @@ def cancelsub(request):
         return render(request, 'cancel.html', {'par': par})
 
 
+
+def ac(request):
+    return render(request,'ac.html')
+
+def paint(request):
+    return render(request,'paint.html')
+
+def lap(request):
+    return render(request,'lap.html')
+
+def cctv(request):
+    return render(request,'cctv.html')
+
+def salon(request):
+    return render(request,'salon.html')
+
+def pest(request):
+    return render(request,'pest.html')
+
+def acc(request):
+    return render(request,'acc.html')
+
+def elec(request):
+    return render(request,'elec.html')
+
+
+def loginh(request):
+    return render(request,'loginh.html')
+
+def verify_loginh(request):
+
+    name = request.POST['uname']
+    password = request.POST['psw']
+
+
+    param = registeringo.objects.all()
+
+    for i in param:
+        if name == i.name:
+            print("in if")
+            if password == i.password:
+                print("in pass")
+                sr=logtable.objects.filter(name=name)
+                print(sr)
+                return render(request,'history.html',{'sr':sr})
+
+            else:
+                print("password is incorrect ")
+                return render(request,'loginh.html')
+
+
+    return render(request,'index.html')
+
+def feedback(request):
+    servicep = request.POST['servicep']
+    feed = request.POST['feed']
+    k = feedadd(servicep=servicep, feed=feed)
+    k.save()
+
+
+    par = '''<script language="javascript">
+                                        alert('Feedback has successfully saved');
+                                        </script>'''
+
+    return render(request,'index.html',{'par':par})

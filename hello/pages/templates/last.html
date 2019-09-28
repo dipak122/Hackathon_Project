@@ -32,7 +32,7 @@ textarea {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password],input[type=Date],input[type=time] {
+input[type=text], input[type=password],input[type=Date],input[type=time] ,.sty{
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -96,9 +96,24 @@ width:400px;
     <input type="text" placeholder="Please enter a valid email address" name="email" required>
     <label for="Date1"><b>Choose a Date for service</b></label>
     <input type="Date" id="Date1" name="Date" required>
-    <label for="appt2"><b>Choose a time for your service</b></label>
-    <input type="time" id="appt2" name="appt" min="09:00" max="18:00" required>
+
+
+      <label for="service"><b>Choose a service provider for your work</b></label>
+    <br>
+    <select class="sty" name="dropdown">
+    <option value="ravi">Ravi Hirave</option>
+    <option value="dipak">Dipak Gautam</option>
+    <option value="rishi">Rushi Deshmukh</option>
+    </select>
+    <label for="service"><b>Choose a time slot for work</b></label><br>
+    <select class="sty" name="dropdownt">
+    <option value="9-11">9:00-11:00</option>
+    <option value="11-1">11:00-1:00</option>
+    <option value="2-4">2:00-4:00</option>
+      <option value="4-6">4:00-6:00</option>
+    </select>
     <small>Office hours are 9am to 6pm</small>
+
     <br>
     <br>
   <!--  <label for="psw"><b>Password</b></label>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head><title> SMART CATCHERS</title>
+        <LINK rel="stylesheet" href="{% static '/cctv/style.css' %}" type="text/css">
+
+
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- animating intro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,100,300,200,500,600,700,800,900">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--footer-->
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--animation-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+        </head>
+    <BODY>
+<!-- partial:index.partial.html -->
+<div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=+919767517147&text=Hii%20i%20want%20Service%20from%20Smartcathchers%20" class="float"  target="_blank">
+<i class="fa fa-whatsapp my-float" ></i>
+</a>
+</div>
+<!-- partial -->
+
+        <div class="bgimg" >
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark  fixed-top">
+                <div class="container">
+                    <a href="{% url 'index' %}" class="navbar-brand text-warning font-weight-bold">SMART CATCHERS</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse " id="collapsenavbar">
+                   <ul class="navbar-nav ml-auto">
+                       <li class="navbar-item ">
+                           <a href="#services" class="nav-link text-white" >SERVICES</a>
+                       </li>
+                       <li class="navbar-item ">
+                            <a href="#abtus" class="nav-link text-white">ABOUT US</a>
+                        </li>
+                        <li class="navbar-item  ">
+                                <a href="" class="nav-link js-scroll-trigger text-white">CONTACT</a>
+                            </li>
+                            <li class="navbar-item ">
+                                    <a href="" class="nav-link js-scroll-trigger text-white">PROFILES</a>
+                                </li>
+                   </ul>
+
+               </div>
+
+
+
+                </div>
+            </nav>
+            <div class="container text-center harderset" >
+                <h1 >Install CCTV</h1>
+                <H2>Save your valuable time with SMARTCATCHERS </H2>
+            </div>
+                <div class="wrap">
+                    <a href="#" id="button" class="button">
+                <button  class="button1">Book Now</button> </a>
+                </div>
+<!--popup model-->
+                <div class="bg-modal">
+	<div class="modal-contents">
+
+		<div class="close">+</div>
+		<form action="{% url 'register' %}" method="post">
+{% csrf_token %}
+<select name="dropdown">
+	<option selected="selected" disabled>Select type</option>
+  <option value="Home">Home</option>
+  <option value="Office">Office</option>
+  <option value="School">School</option>
+    <option value="Society">Society</option>
+  </select>
+            <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+
+
+<script>document.getElementById('button').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "flex";
+});
+
+document.querySelector('.close').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "none";
+});</script>
+	</div>
+</div>
+
+
+
+        </div>
+
+
+
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="container-fluid" id="bg3">
+            <footer class="container " id="abtus">
+          <div class="row foot">
+
+            <div id="foot1" class="col-md-3 col-sm-3">
+
+              <h3>Useful Links</h3>
+             <h5 id="firstchild">
+              <span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Contact Us</b></a></h5>
+             <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>About Us</b></a></h5>
+             <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Terms & Conditions</b></a></h5>
+             <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Private Policy</b></a></h5>
+            </div>
+
+             <div id="foot2" class="col-md-3 col-sm-3">
+              <h3>Customer Services</h3>
+
+        <h5 id="firstchild"><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Customer Support</b></a></h5>
+        <h5> <span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Cancel Booking</b></a></h5>
+        <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"> <b>Cancelltion policy</b></a></h5>
+        <h5><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"><b> Register</b></a></h5>
+        <h5 style="border-bottom:0px;"><span class="glyphicon glyphicon-chevron-right"></span><a href="#" class="text-muted"><b> Conatct Us</b></a></h5>
+             </div>
+
+            <div id="foot3" class="col-md-3 col-sm-3" >
+                <h3>Address</h3>
+                <h4 class="text-muted">Shivaji Nagar<br>juna Tofkhana, Near Civil Court<br>Pune 411005 </br>E-mail: SmartCatchers@gmail.com</h4>
+
+              </div>
+
+
+              <div id="foot4" class="col-md-3 col-sm-3">
+                 <h3>Follow Us</h3><br>
+                   <ul class="social-network social-circle">
+                      <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                       <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#" class="icoTumblr" title="instagram"><i class="fa fa-instagram"></i></a></li>
+
+              </ul>
+               </div>
+
+        </div>
+        </footer>
+        </div>
+        <section class="container-fluid" id="foot5">
+                <h6 class="text-center text-muted ">Copyrights © 2019 SmartCatchers.com</h4>
+              </section>
+    <!--  <script type="text/javascript">
+      $('.js-scroll-trigger').click(function(){
+          $('.navbar-collapse').collapse('hide');
+      }); </script> -->
+    <!-- <script type="text/javascript">
+      $('.navbar-nav>li>a').on('click',function(){
+        $('.navbar-collapse').collapse('hide');
+    }); </script>
+
+
+<script>var wow = new WOW(
+    {
+      boxClass:     'wow',      // animated element css class (default is wow)
+      animateClass: 'animated', // animation css class (default is animated)
+      offset:       0,          // distance to the element when triggering the animation (default is 0)
+      mobile:       true,       // trigger animations on mobile devices (default is true)
+      live:         true,       // act on asynchronously loaded content (default is true)
+      callback:     function(box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+      },
+      scrollContainer: null,    // optional scroll container selector, otherwise use window,
+      resetAnimation: true,     // reset animation on end (default is true)
+    }
+  );
+  wow.init();</script>  -->
+<!--
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>$(function() {
+
+    var $window           = $(window),
+        win_height_padded = $window.height() * 1.1,
+        isTouch           = Modernizr.touch;
+
+    if (isTouch) { $('.revealOnScroll').addClass('animated'); }
+
+    $window.on('scroll', revealOnScroll);
+
+    function revealOnScroll() {
+      var scrolled = $window.scrollTop(),
+          win_height_padded = $window.height() * 1.1;
+
+      // Showed...
+      $(".revealOnScroll:not(.animated)").each(function () {
+        var $this     = $(this),
+            offsetTop = $this.offset().top;
+
+        if (scrolled + win_height_padded > offsetTop) {
+          if ($this.data('timeout')) {
+            window.setTimeout(function(){
+              $this.addClass('animated ' + $this.data('animation'));
+            }, parseInt($this.data('timeout'),10));
+          } else {
+            $this.addClass('animated ' + $this.data('animation'));
+          }
+        }
+      });
+      // Hidden...
+     $(".revealOnScroll.animated").each(function (index) {
+        var $this     = $(this),
+            offsetTop = $this.offset().top;
+        if (scrolled + win_height_padded < offsetTop) {
+          $(this).removeClass('animated fadeInUp flipInX lightSpeedIn tada')
+        }
+      });
+    }
+
+    revealOnScroll();
+  });
+</script>  -->
+  <script src="JS/script.js"></script>
+
+    </BODY>
+</html>

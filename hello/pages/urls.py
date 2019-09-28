@@ -42,6 +42,17 @@ urlpatterns = [
     path('proverify_login/',views.proverify_login,name='proverify_login'),
     path('cancel/',views.cancel,name='cancel'),
     path('cancelsub/',views.cancelsub,name='cancelsub'),
+    path('ac/', views.ac, name='ac'),
+    path('paint/', views.paint, name='paint'),
+    path('lap/', views.lap, name='lap'),
+    path('cctv/', views.cctv, name='cctv'),
+    path('salon/', views.salon, name='salon'),
+    path('pest/', views.pest, name='pest'),
+    path('acc/', views.acc, name='acc'),
+    path('elec/', views.elec, name='elec'),
+    path('loginh/', views.loginh, name='loginh'),
+    path('verify_loginh/', views.verify_loginh, name='verify_loginh'),
+    path('feedback/', views.feedback, name='feedback'),
 
 
 ]
