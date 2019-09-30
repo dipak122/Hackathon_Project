@@ -1,8 +1,0 @@
-
-<select>
-	<option value="">Select Your Brand</option>
-  <option value="volvo">iphone</option>
-  <option value="Realme">Realme</option>
-  <option value="Vivo">Vivo</option>
-  <option value="oppo">oppo</option>
-  </select>
