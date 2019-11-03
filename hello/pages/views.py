@@ -251,7 +251,7 @@ def proverify_login(request):
         print(i.password)
         if username == i.username:
             if password == i.password:
-                print("i m inuser")
+                print("i m in user")
                 t = proregisteringo.objects.get(username=username)
                 service = t.service
                 print(service)
