@@ -2,12 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8cd38e-cdc2-475e-82a6-7e7c6d6fb251" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hello/pages/static/css/style_error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello/pages/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello/pages/templates/error_404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello/pages/templates/error_500.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/hackathon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/hello/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello/pages/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello/pages/templates/last.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/last.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/hello/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/hello/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/hello/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/hello/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/ac.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/ac.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/acc.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/acc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/cancel.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/cancel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/cctv.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/cctv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/elec.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/elec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/lap.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/lap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/mob.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/mob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/paint.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/paint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/pest.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/pest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/templates/salon.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/templates/salon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/pages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/pages/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +48,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tryone" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hello/pages/templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\project\Hackathon_Project\hello\pages\templates" />
+      <recent name="F:\project\Hackathon_Project\hello\pages\static\css" />
       <recent name="D:\django\hackathon\hello\pages\templates" />
       <recent name="D:\django\hackathon\hello\pages\static" />
       <recent name="D:\django\hackathon\hello\pages" />

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css" >
   form {
-  border: 3px solid #f1f1f1;
+  border: 3px solid #ec9696;
+  border-radius:15px;
 }
 
 /* Full-width inputs */
@@ -84,8 +85,10 @@ span.psw {
 </style>
 </head>
 <body>
+
+<div style="position:100px 100px;margin:100px;">
   <form action="{% url 'verify_login' %}" method="post">{% csrf_token %}
-  <div><h3 style="text-align:center; " >Login</h3></div>
+  <div ><h3 style="text-align:center;" >Login</h3></div>
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -100,4 +103,5 @@ span.psw {
 
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 </form>
+</div>
 </body>

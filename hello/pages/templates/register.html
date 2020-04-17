@@ -67,11 +67,11 @@ hr {
 .registerbtn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
+  padding: 6px 6px;
   margin: 8px 0;
-  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  width: 150x;
+  width: 100px;
   opacity: 0.9;
   radius : 10;
 
@@ -98,13 +98,16 @@ width:400px;
 </style>
 </head>
 <body>
-<div class="alert alert-danger" role="alert">
-  IF already registered please <form method="POST" action="{% url 'login' %}">{% csrf_token %}
+{{par|safe}}
+<div class="alert alert-danger"  role="alert">
+  <div style="width:200px;display: inline-block;"><span>IF already registered please </span></div>
+  <div style="width:100px; display: inline-block;"><form method="POST" action="{% url 'login' %}">{% csrf_token %}
   <input type="hidden" id="custId" name="service" value="{{service}}">
 
 
    <button type="submit" class="registerbtn" name="brand" value="{{brand}}">Signin</button>
 </form>
+  </div>
 </div>
 
 <form action="{% url 'register_submission' %}" method="POST">{% csrf_token %}

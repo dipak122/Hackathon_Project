@@ -90,7 +90,8 @@
                 <div class="bg-modal">
 	<div class="modal-contents">
 
-		<div class="close">+</div>
+		<div class="close" >+</div>
+        <div style="padding-top:110px;">
 		<form action="{% url 'register_d' %}" method="post">
 {% csrf_token %}
            <input type="hidden" id="mobile" name="mobile" value="mobile">
@@ -107,6 +108,7 @@
   </select>
             <button type="submit" class="btn btn-success">Next</button>
 </form>
+        </div>
 
 
 

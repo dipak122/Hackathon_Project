@@ -39,8 +39,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
 <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script> 
-        </head>
+        <script>
+            #navpad{
+            padding:2px 2px 2px 2px !important;
+            }
+        </script>
+
+    </head>
     <BODY>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
     {{par|safe}}
 <!-- partial:index.partial.html -->
 <div>
@@ -53,26 +64,38 @@
 <!-- partial -->
 
         <div class="bgimg" >
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark  fixed-top hidden-tablet hidden-phone">
-                <div class="container">
-                    <a href="" class="navbar-brand text-warning font-weight-bold">SMART CATCHERS</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
-                   <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse " id="collapsenavbar">
+            <nav  style="" class="navbar navbar-expand-md bg-dark navbar-dark  fixed-top hidden-tablet hidden-phone" >
+                <div class="container" id="navpad" style="margin-left:0px; margin-right:0px; width:100% !important; ">
+                    <a href="" class="navbar-brand text-warning font-weight-bold" style="">SMART CATCHERS</a>
+<!--               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">-->
+<!--                   <span class="navbar-toggler-icon"></span>-->
+<!--               </button>-->
+               <div class="collapse navbar-collapse " id="collapsenavbar" style="">
                    <ul class="navbar-nav ml-auto">
-                       <li class="navbar-item "> 
+                       <li class="navbar-item ">
+                           <a href="{% url 'prologin' %}" class="nav-link js-scroll-trigger text-white">Agent login</a>
+                       </li>
+                       <li class="navbar-item ">
                            <a href="#services" class="nav-link text-white" >SERVICES</a>
                        </li>
-                       <li class="navbar-item "> 
+                       <li class="navbar-item ">
                             <a href="{% url 'loginh' %}" class="nav-link text-white" >History</a>
                         </li>
-                        <li class="navbar-item  "> 
+                       <li class="navbar-item  ">
                                 <a href="{% url 'cancel' %}" class="nav-link js-scroll-trigger text-white">Cancelled Booking </a>
                             </li>
-                            <li class="navbar-item "> 
-                                    <a href="{% url 'prologin' %}" class="nav-link js-scroll-trigger text-white">Agent login</a>
-                                </li>
+                        {% if uname %}
+
+ <li class="navbar-item  ">
+     <a href="{% url 'index' %}" class="nav-link js-scroll-trigger text-white">{{uname}} </a>
+ </li>
+
+
+                       {% else %}
+                       <li class="navbar-item  ">
+                                <a href="{% url 'register' %}" class="nav-link js-scroll-trigger text-white">Login </a>
+                            </li>
+                       {% endif %}
                    </ul>
 
                </div>

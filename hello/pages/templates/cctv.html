@@ -91,6 +91,7 @@
 	<div class="modal-contents">
 
 		<div class="close">+</div>
+         <div style="padding-top:110px;">
 		<form action="{% url 'register' %}" method="post">
 {% csrf_token %}
 <select name="dropdown">
@@ -101,7 +102,7 @@
     <option value="Society">Society</option>
   </select>
             <button type="submit" class="btn btn-success">Submit</button>
-</form>
+        </form></div>
 
 
 
